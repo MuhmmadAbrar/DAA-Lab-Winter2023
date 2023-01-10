@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <string>
-
+#include <ctime>
 using namespace std;
 
 void printArray(char array[], int size) {
@@ -23,7 +23,6 @@ void insertionSort(char array[], int size) {
     }
 }
 
-// Driver code
 int main() {
     string s;
     cin>>s;
@@ -31,7 +30,13 @@ int main() {
     char* data = new char[len_st + 1];
     strcpy(data, s.c_str());
     int size = sizeof(data) / sizeof(data[0]);
+    clock_t timeStart = clock(); 
     insertionSort(data, size);
+    float time=(float)(clock() - timeStart)/CLOCKS_PER_SEC;
+    cout<<"The number of inputs: "<<len_st<<endl;
     cout << "Sorted string in ascending order:\n";
     printArray(data, size);
+    cout<<"Time Taken is "<<time<<"s";
 }
+
+

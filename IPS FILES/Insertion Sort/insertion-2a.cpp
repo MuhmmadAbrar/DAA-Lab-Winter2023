@@ -20,11 +20,14 @@ void insertionSort(int array[], int size) {
     }
 }
 
-// Driver code
 int main() {
-    int data[] = {9, 5, 1, 4, 3};
+    int data[] = {5,7,4,3,6,2};
+    cout << "Given array: \n";
     int size = sizeof(data) / sizeof(data[0]);
+    printArray(data,size);
     insertionSort(data, size);
-    cout << "Sorted array in ascending order:\n";
+    cout << "Insertion sort in ascending order:\n";
     printArray(data, size);
 }
+
+
